@@ -1,0 +1,16 @@
+---
+description: Placeholder list/mock screen data — hardcode in *MockData.kt, not strings.xml
+alwaysApply: true
+---
+
+# Mock and placeholder screen data
+
+When UI is driven by **temporary sample rows** (demo apps, fake list items, stub URLs) that **will be replaced** by repository / API / system data:
+
+- Put literals in a dedicated Kotlin file next to the screen, named by convention **`HomeScreenMockData.kt`**, **`FeatureXMockData.kt`**, or **`feature/MockData.kt`** — one clear entry point (e.g. `homeAppListMockData(): List<...>`).
+- **Hardcode** strings and remote image URLs in that file (`private const val ...` for URLs is fine). Do **not** add `strings.xml` entries or drawables **only** for this disposable mock content.
+- The screen composable should **`remember { …MockData() }`** and stay thin.
+
+**Still use `strings.xml` / theme resources** for real product UI: navigation labels, empty states, errors, permission dialogs, buttons that ship to users, and anything not strictly throwaway placeholder data.
+
+This is an explicit exception to the general “no hardcoded user-visible strings” rule **for mock-only files** as described above.

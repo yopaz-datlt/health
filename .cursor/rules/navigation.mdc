@@ -1,0 +1,12 @@
+---
+description: Navigation (AppNavHost/AppDestinations) conventions
+globs: app/src/main/java/com/kira/android_base/app/presentation/navigation/**/*.kt
+alwaysApply: false
+---
+
+# Navigation
+- Update `AppDestinations` for new routes (use simple string constants).
+- Register destinations only inside `AppNavHost` using `composable(AppDestinations.X)`.
+- Prefer explicit `popUpTo(...){ inclusive = true }` when replacing auth flow screens.
+- Route-to-ViewModel wiring is done via Hilt (`hiltViewModel()` / `@HiltViewModel`).
+

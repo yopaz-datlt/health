@@ -1,0 +1,12 @@
+---
+description: Avoid 'Uninstall' / 'batch uninstall' prefixes for packages, files, and types in cleanup flows
+globs: app/src/main/java/**/*.kt
+alwaysApply: false
+---
+
+# Naming around cleanup / app removal flows
+
+- Do **not** use `Uninstall` or `BatchUninstall` as a prefix for **package segments**, **Kotlin file names**, **composable names**, or **type names** (classes, models) under `presentation/screens/cleanup/**` and related home/navigation wiring.
+- Prefer neutral segments and names, e.g. package `…screens.cleanup.results`, `ResultsScreen`, `AppListFab`, routes `cleanup_results` / `cleanup_history`.
+- **String resources** may still say “uninstall” when that is literal user-facing product copy.
+- **Comments** referencing external design titles (e.g. Stitch “Batch Uninstall”) are fine.

@@ -1,0 +1,14 @@
+---
+description: Each Kotlin top-level type lives in its own file
+globs: app/src/main/java/**/*.kt
+alwaysApply: false
+---
+
+# One top-level type per file
+
+- Do not group multiple unrelated top-level types in a single Kotlin file.
+- Default convention:
+  - One `data class` / `class` / `interface` / `enum` per file.
+  - Name the file after the primary type (e.g. `UninstallResultsUiState.kt`, `UninstallResultItem.kt`, `UninstallResultStatus.kt` when split further).
+- Small helper types that are tightly coupled (e.g. a private extension or nested sealed subclass) should prefer **being nested** inside the main type rather than declared as separate top-level types in the same file.
+

@@ -1,0 +1,15 @@
+---
+description: Clean up unused code/imports after edits
+globs: app/src/main/java/**/*.kt
+alwaysApply: false
+---
+
+# Cleanup after edits
+
+- After adding or refactoring code, **remove anything no longer used**:
+  - Unused imports.
+  - Dead composables / helper functions / data classes that have no references.
+  - Commented-out legacy blocks that are not part of an active migration.
+- Prefer running IDE “optimize imports” / “find usages” flows before sending changes.
+- Do not keep speculative abstractions “for later” — only keep types that are used today or are clearly wired into the current feature.
+

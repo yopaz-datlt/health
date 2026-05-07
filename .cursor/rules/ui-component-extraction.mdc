@@ -1,0 +1,12 @@
+---
+description: Screen UI composition rules (extract components)
+globs: app/src/main/java/**/presentation/screens/**/*.kt
+alwaysApply: true
+---
+
+# Screen UI Rules
+- In `presentation/screens/**`, keep the file focused on the screen entry composable(s) and screen-level wiring/state only.
+- Do not place reusable UI components inside `*Screen.kt` (or other screen files); extract them into a `components/` folder, e.g. `presentation/screens/<screen>/components/**`.
+- When extracting, name component files by their purpose (e.g. `TopBar.kt`, `AppRow.kt`) rather than repeating a feature prefix (e.g. avoid `BatchUninstall...` on every file).
+- Keep the screen file under ~200 lines; split large UI into multiple component files.
+

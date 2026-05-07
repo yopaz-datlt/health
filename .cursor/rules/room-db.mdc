@@ -1,0 +1,14 @@
+---
+description: Room database conventions for AndroidBase
+globs: app/src/main/java/com/kira/android_base/app/data/local/db/**/*.kt
+alwaysApply: false
+---
+
+# Room + Local DB
+- Update `AppDatabase` entities list and version when adding new `@Entity`.
+- Update `DatabaseModule` to provide the new DAO(s) from the database.
+- Keep `@Entity` models mapping-friendly (prefer `fun toDomain()` like `UserEntity.toUser()`).
+- Prefer DAO patterns:
+  - `Flow<T>` for query observations
+  - `suspend` for insert/delete operations
+

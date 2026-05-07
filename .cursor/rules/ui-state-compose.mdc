@@ -1,0 +1,15 @@
+---
+description: Jetpack Compose UI + StateFlow + Loading patterns
+globs: app/src/main/java/com/kira/android_base/app/presentation/**/*.kt
+alwaysApply: false
+---
+
+# Compose + UI State
+- Composables should be mostly pure:
+  - Take `State<T>` or primitive UI state as parameters
+  - Expose user events via callbacks (`onXClick: () -> Unit`, etc.)
+- Collect ViewModel state with `collectAsState()` for UI rendering.
+- For one-time side effects (navigation, calling callbacks after login success), use `LaunchedEffect(key)` and react to state changes.
+- Use `Loading()` from `com.kira.android_base.base.components.Loading` when `state.isLoading` is true.
+- Render errors from `state.errorMessage` (from `presentation/common/State.kt`) when non-null.
+

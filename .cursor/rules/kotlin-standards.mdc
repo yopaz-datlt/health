@@ -1,0 +1,19 @@
+---
+description: Core Kotlin + Hilt + async conventions for AndroidBase
+globs: **/*.kt
+alwaysApply: false
+---
+
+# Kotlin + Conventions
+- Prefer Kotlin idioms (`val` by default, small focused functions, data classes for models).
+- Use Hilt DI: `@HiltAndroidApp`, `@AndroidEntryPoint`, `@HiltViewModel`, and constructor injection only.
+- UI-related blocking calls are forbidden; avoid `runBlocking` in new code.
+- Keep packages aligned to architecture:
+  - `app/presentation` -> UI + ViewModels
+  - `app/domain` -> pure domain models
+  - `app/data` -> datasources + repositories + Result mappings
+  - `base` -> shared UI components
+- Follow naming from existing code:
+  - RemoteDataSource classes wrap APIs
+  - Repositories are the only place that orchestrates remote/local for a feature
+

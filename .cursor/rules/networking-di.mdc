@@ -1,0 +1,16 @@
+---
+description: Retrofit/OkHttp/Hilt networking conventions for AndroidBase
+globs: app/src/main/java/com/kira/android_base/app/data/remote/**/*.kt
+alwaysApply: false
+---
+
+# Networking + DI
+- Retrofit wiring is centralized in `app/data/remote/apis/APIModule.kt`.
+- `baseUrl` must come from `BuildConfig.BASE_URL`.
+- OkHttp uses:
+  - `AppInterceptor` (adds JSON headers + Authorization Bearer token when available)
+  - Chucker interceptor for debugging
+  - HttpLoggingInterceptor (BODY)
+- Every new API interface must be provided from `APIModule` (add `provideXApi()`).
+- When adding auth-related behavior, prefer changes in `AppInterceptor` and/or local token flow.
+

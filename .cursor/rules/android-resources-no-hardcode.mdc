@@ -1,0 +1,32 @@
+---
+description: No hardcoded UI strings or colors — strings.xml + theme Color.kt
+alwaysApply: true
+---
+
+# User-visible strings and colors
+
+## Strings
+
+- Do not embed user-facing copy directly in Composables/ViewModels (`Text("...")`, `Toast`, important `contentDescription`, etc.).
+- Add keys in `app/src/main/res/values/strings.xml` (group with comments by screen/feature), then use `stringResource(R.string.<name>)` or `context.getString(R.string.<name>)` outside `@Composable` when needed.
+- Reasonable exceptions: logs/debug-only, test doubles, technical constants (not UI copy).
+- **Placeholder list / demo rows** that will be removed when real data exists: follow `.cursor/rules/mock-screen-data.mdc` (hardcode in `*MockData.kt`, not `strings.xml`).
+
+## Colors (Compose)
+
+- Do not scatter hex literals `Color(0xFF......)`, ad-hoc `Color.*`, or `#RRGGBB` in Kotlin UI code under `presentation/**`.
+- Prefer in order:
+  - **Semantic / Material**: `MaterialTheme.colorScheme.*` when M3 tokens fit.
+  - **App palette**: define tokens in `app/src/main/java/com/kira/android_base/app/theme/Color.kt` only as top-level `val` (same style as `Purple40`, `AppListScreenBg`, etc.). Import `com.kira.android_base.app.theme.<Name>` in UI. **Do not** add per-screen color alias files under `presentation/screens/**/components/`.
+- Use `res/values/colors.xml` + `colorResource` only when the same color must be shared with XML/views (not for Compose-only screens).
+
+## Naming (types, files, resources)
+
+- Do **not** use marketing/feature codenames as prefixes for types, Kotlin files, or string/color keys. Use neutral, purpose-based names (`AppList`, `AccessibilityPermission`, `home_app_list_*`, etc.).
+
+## Quick reference
+
+| Need    | Define in                      | Use in code                          |
+|---------|--------------------------------|--------------------------------------|
+| UI text | `res/values/strings.xml`       | `stringResource` / `getString`       |
+| Color   | `app/theme/Color.kt` (Compose) | import theme `val` members           |

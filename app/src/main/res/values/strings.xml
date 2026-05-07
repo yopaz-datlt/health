@@ -1,0 +1,20 @@
+<resources>
+    <!--    App-->
+    <string name="app_name">Health</string>
+
+    <!--    Login Screen-->
+    <string name="login_email_label">Email</string>
+    <string name="login_password_label">Password</string>
+    <string name="login_button">Login</string>
+
+    <!--    Home Screen-->
+    <string name="home_title">Home</string>
+    <string name="home_logout_button">Logout</string>
+    <string name="home_test_crashlytics">Test Crashlytics</string>
+    <string name="home_contacts_title">Contacts</string>
+    <string name="home_contacts_error">Unable to load contacts</string>
+    <string name="home_contacts_retry">Retry</string>
+
+    <!--    Utils-->
+    <string name="share_using">Share using</string>
+</resources>

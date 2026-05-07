@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "733239977789",
+    "project_id": "androidbase-bcfa7",
+    "storage_bucket": "androidbase-bcfa7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733239977789:android:9bfc876592d9d84e624754",
+        "android_client_info": {
+          "package_name": "com.kira.health.develop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWwtmQZZbbUUpyV-vp3xIQnI8NwsOgqm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733239977789:android:d6cd2510d616c428624754",
+        "android_client_info": {
+          "package_name": "com.kira.health.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWwtmQZZbbUUpyV-vp3xIQnI8NwsOgqm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733239977789:android:40845f6a08e5fb91624754",
+        "android_client_info": {
+          "package_name": "com.kira.health"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWwtmQZZbbUUpyV-vp3xIQnI8NwsOgqm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

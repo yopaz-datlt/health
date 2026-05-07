@@ -1,0 +1,21 @@
+---
+description: Data layer conventions (datasource/repository/Result/State) for AndroidBase
+globs: app/src/main/java/com/kira/android_base/app/data/**/*.kt
+alwaysApply: false
+---
+
+# Data Layer Conventions
+- Remote APIs live in `app/data/remote/apis/*Api.kt` and should return:
+  - `retrofit2.Response<BaseResponse<T>>`
+- Remote datasources live in `app/data/remote/datasource/*RemoteDataSource.kt`
+  - They are thin wrappers around the APIs.
+- Local datasources live in `app/data/local/datasource/*LocalDataSource.kt`
+  - They expose flows (e.g. token/user) and suspend persistence methods.
+- Repositories live in `app/data/repositories/*Repository.kt`
+  - They orchestrate remote/local for a use-case.
+  - They convert Retrofit responses to domain results using `ResponseExtensions.toResult()`.
+
+# Result/State contract
+- Network/unknown errors are mapped into `Result.Error` by `ResponseExtensions.toResult()`.
+- In ViewModels, map data-layer `Result<T>` to UI `State<T>` via `ResultExtensions.toState()`.
+

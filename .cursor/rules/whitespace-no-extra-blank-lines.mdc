@@ -1,0 +1,12 @@
+---
+description: Keep whitespace tight (no extra blank lines)
+alwaysApply: true
+globs: **/*
+---
+
+# Whitespace Rules
+
+- Do not add **2 consecutive blank lines** anywhere in a file.
+- At end-of-file (EOF), allow **at most 1 trailing blank line** to satisfy git newline rules.
+- Prefer **exactly 1** blank line between logical sections; otherwise write lines without extra whitespace.
+

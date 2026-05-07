@@ -1,0 +1,16 @@
+---
+description: Avoid single-use, text-only wrapper composables
+globs: app/src/main/java/**/*.kt
+alwaysApply: false
+---
+
+# Text-only composables
+
+- Do **not** create a separate `@Composable` solely to wrap a `Text(...)` call when:
+  - It is only used in **one** place, and
+  - It has no logic, slots, or styling parameters beyond what can be expressed inline.
+- Prefer inlining `Text(...)` directly in the screen/layout in these cases.
+- Extract a text composable only when:
+  - It is reused across multiple call sites, **or**
+  - It encapsulates non-trivial behavior (e.g. ellipsis rules, click handling, animated style changes).
+
