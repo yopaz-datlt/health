@@ -6,49 +6,28 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.kira.health.app.presentation.screens.home.GoalsScreen
 import com.kira.health.app.presentation.screens.home.HomeScreen
 import com.kira.health.app.presentation.screens.home.HomeViewModel
 import com.kira.health.app.presentation.screens.login.LoginScreen
 
 object AppDestinations {
-    const val LOGIN = "login"
-    const val HOME = "home"
+    const val GOALS = "goals"
 }
 
 @Composable
 fun AppNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = AppDestinations.LOGIN
+    startDestination: String = AppDestinations.GOALS
 ) {
     NavHost(
         navController = navController,
         startDestination = startDestination,
         modifier = modifier
     ) {
-        composable(AppDestinations.LOGIN) {
-            LoginScreen(
-                onLoginSuccess = {
-                    navController.navigate(AppDestinations.HOME) {
-                        popUpTo(AppDestinations.LOGIN) {
-                            inclusive = true
-                        }
-                    }
-                }
-            )
-        }
-        composable(AppDestinations.HOME) {
-            val homeViewModel: HomeViewModel = hiltViewModel()
-            HomeScreen(
-                onLogoutClick = {
-                    homeViewModel.logout()
-                    navController.navigate(AppDestinations.LOGIN) {
-                        popUpTo(AppDestinations.HOME) {
-                            inclusive = true
-                        }
-                    }
-                }
-            )
+        composable(AppDestinations.GOALS) {
+            GoalsScreen()
         }
     }
 }
