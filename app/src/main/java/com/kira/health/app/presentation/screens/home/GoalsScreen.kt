@@ -27,7 +27,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -38,7 +37,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kira.health.R
-import com.kira.health.app.theme.color_accent
 import com.kira.health.app.theme.color_achievement_distance_bg
 import com.kira.health.app.theme.color_achievement_distance_border
 import com.kira.health.app.theme.color_achievement_distance_text
@@ -48,7 +46,6 @@ import com.kira.health.app.theme.color_achievement_early_text
 import com.kira.health.app.theme.color_achievement_streak_bg
 import com.kira.health.app.theme.color_achievement_streak_border
 import com.kira.health.app.theme.color_achievement_streak_text
-import com.kira.health.app.theme.color_border_soft
 import com.kira.health.app.theme.color_card_border
 import com.kira.health.app.theme.color_distance_percent
 import com.kira.health.app.theme.color_distance_value
@@ -56,8 +53,6 @@ import com.kira.health.app.theme.color_icon_distance_overlay
 import com.kira.health.app.theme.color_icon_steps_bg
 import com.kira.health.app.theme.color_progress_fill
 import com.kira.health.app.theme.color_progress_track
-import com.kira.health.app.theme.color_surface_card
-import com.kira.health.app.theme.color_text_primary
 
 @Composable
 fun GoalsScreen(
@@ -180,7 +175,7 @@ private fun DailyProgressItem(
 
             Text(
                 text = value,
-                color = color_text_primary,
+                color = colorResource(R.color.color_1F1A1C),
                 fontSize = 14.sp,
                 lineHeight = 20.sp,
                 fontWeight = FontWeight.Bold,
@@ -242,14 +237,14 @@ private fun WeeklyTargetsSection(
         ) {
             Text(
                 text = title,
-                color = color_text_primary,
+                color = colorResource(R.color.color_1F1A1C),
                 fontSize = 20.sp,
                 lineHeight = 28.sp,
                 fontWeight = FontWeight.Bold,
             )
             Text(
                 text = actionText,
-                color = color_accent,
+                color = colorResource(R.color.color_9B0044),
                 fontSize = 14.sp,
                 lineHeight = 20.sp,
                 fontWeight = FontWeight.SemiBold,
@@ -288,7 +283,7 @@ private fun WeeklyTargetCard(
     Card(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(32.dp),
-        colors = CardDefaults.cardColors(containerColor = color_surface_card),
+        colors = CardDefaults.cardColors(containerColor = colorResource(R.color.white)),
         border = BorderStroke(1.dp, color_card_border),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
@@ -308,7 +303,7 @@ private fun WeeklyTargetCard(
             ) {
                 Text(
                     text = title.take(1),
-                    color = color_text_primary,
+                    color = colorResource(R.color.color_1F1A1C),
                     fontWeight = FontWeight.Bold,
                     fontSize = 16.sp
                 )
@@ -324,14 +319,14 @@ private fun WeeklyTargetCard(
                 ) {
                     Text(
                         text = title,
-                        color = color_text_primary,
+                        color = colorResource(R.color.color_1F1A1C),
                         fontSize = 16.sp,
                         lineHeight = 24.sp,
                         fontWeight = FontWeight.Bold,
                     )
                     Text(
                         text = value,
-                        color = if (title == "Steps") color_accent else color_distance_value,
+                        color = if (title == "Steps") colorResource(R.color.color_9B0044) else color_distance_value,
                         fontSize = 14.sp,
                         lineHeight = 20.sp,
                         fontWeight = if (title == "Steps") FontWeight.SemiBold else FontWeight.SemiBold,
@@ -382,7 +377,7 @@ private fun RecentAchievementsSection(
     ) {
         Text(
             text = title,
-            color = color_text_primary,
+            color = colorResource(R.color.color_1F1A1C),
             fontSize = 20.sp,
             lineHeight = 28.sp,
             fontWeight = FontWeight.Bold,
@@ -428,7 +423,7 @@ private fun AchievementCard(
         modifier = modifier,
         shape = RoundedCornerShape(48.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
-        border = BorderStroke(1.dp, color_border_soft),
+        border = BorderStroke(1.dp, colorResource(R.color.white)),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
     ) {
         Column(

@@ -11,12 +11,7 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 // Figma "Health / Main" colors (prefix: color_*)
-val color_text_primary = Color(0xFF1F1A1C)
-val color_accent = Color(0xFF9B0044)
-val color_glass_surface = Color(0x99FFFFFF) // rgba(255,255,255,0.6)
-val color_border_soft = Color(0xFFFFF1F2)
 
-val color_surface_card = Color(0xFFFBF1F3)
 val color_card_border = Color(0x4CE1BEC4) // rgba(225,190,196,0.3)
 
 val color_progress_track = Color(0xFFFFE4E6)
